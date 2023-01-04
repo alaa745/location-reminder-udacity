@@ -37,10 +37,9 @@ class AuthenticationActivity : AppCompatActivity() {
 
         launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { check ->
             if (check.resultCode == RESULT_OK) {
-                Log.d("TAG", "Login Successful")
+                Log.d("TAG", "Login successful")
             }
         }
-
         viewModel.state.observe(this) { authentication ->
             when (authentication) {
                 MyLoginViewModel.State.AUTHENTICATED -> {
